@@ -1,0 +1,167 @@
+@import "../../styles/global";
+
+.card {
+    width: 300px;
+    height: 375px;
+    border-radius: 20px;
+    background-color: $bc_gray10;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    img {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .main{
+        p:nth-of-type(1) {
+            padding: 20px 20px 15px 20px;
+        }
+
+        p:nth-of-type(2) {
+            height: 120px;
+            max-width: 260px;
+            width: 100%;
+            padding: 0 20px 16px 20px;
+            color: $gray_text_cd;
+        }
+    }
+
+    .setting{
+        p:nth-of-type(1) {
+            padding: 20px 20px 15px 20px;
+        }
+
+        .technology{
+            height: 52px;
+            padding-left: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 0 ;
+
+            .stack{
+                @extend .container_center;
+                justify-content: flex-start;
+                height: 20px;
+                gap: 10px;
+                width: 120px;
+
+                .dot_stack{
+                    height: 7px;
+                    width: 7px;
+                    border-radius: 7px;
+                    background-color: $white_item_color;
+                }
+
+                p{
+                    padding: 0;
+                }
+            }
+
+            .technology_none{
+                margin-left: -20px;
+                margin-top: -20px;
+            }
+        }
+
+        button.more {
+            @extend .container_center;
+
+            border: 0;
+            cursor: pointer; 
+            width: 100px;
+            height: 34px;
+            border-radius: 20px;
+            margin: 25px 0 25px 20px;
+            background-color: $white_item_color;
+
+            p{
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+
+    .home{
+        > p:nth-of-type(1) {
+            padding: 20px 20px 15px 20px;
+        }
+
+        .teamlead{
+            @extend .container_center;
+            justify-content: flex-start;
+            padding: 0 0 15px 20px;
+
+            .image_teamlead{
+                height: 41px;
+                width: 41px;
+                border-radius: 45px;
+                background-color: $white_item_color;
+            }
+
+            .teamlead_text{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                gap: 4px;
+
+                padding-left: 20px;
+                padding-top: 2px;
+
+                p{
+                    padding: 0;
+                }
+
+                p:nth-of-type(2) {
+                    color: $gray_text_999;
+                }
+            }
+        }
+
+        .teamlead_line{
+            margin: 0 20px;
+            width: 260px;
+            border-radius: 1px;
+            height: 1px;
+            background-color: $white_item_color;
+        }
+
+        button.home_team{
+            border: 0;
+            cursor: pointer; 
+            height: 14px;
+            position: absolute;
+            z-index: 100;
+            padding: 0;
+            background-color: transparent;
+            right: 20px;
+            top: 247px;
+
+            p{
+              color: $rose_color;  
+            }
+        }
+
+        .participate {
+            @extend .container_center;
+
+            border: 0;
+            width: 110px;
+            height: 34px;
+            border-radius: 20px;
+            margin: 20px 0 25px 20px;
+            color: $white_item_color;
+        }
+
+        button.participate{
+            cursor: pointer; 
+        }
+    }
+
+    .section {
+        @extend .container_between;
+        width: 150px;
+        height: 40px;
+        padding-left: 20px;
+    }
+}

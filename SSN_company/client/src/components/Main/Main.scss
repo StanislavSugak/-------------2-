@@ -1,0 +1,26 @@
+main{
+    display: flex;
+    width: 100%;
+
+    .children{
+        min-height: 600px;
+        max-width: calc(100% - 280px);
+        flex-grow: 1;
+        transition: margin-left 0.3s ease; 
+
+        &.full-width {
+            max-width: none; // Убираем ограничение
+        }
+    }
+}
+
+@media(max-width:1025px){
+    main{
+        .children{
+            max-width: 100%;
+            display: flex; 
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}

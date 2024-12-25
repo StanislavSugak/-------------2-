@@ -1,0 +1,37 @@
+@import "../../styles/global";
+
+.button_card{
+    @extend .container_center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+
+    &::before { //псевдоэлемент для внутренней границы
+        content: ''; 
+        position: absolute; // Позиционирование относительно родителя
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 20px;
+        border: 1px solid $white_item_color; 
+        pointer-events: none; // Игнорируем события мыши
+        z-index: 1; 
+    }
+
+    .img20{
+        height: 20px;
+        width: 20px;
+    }
+
+    .img18{
+        height: 18px;
+        width: 18px;
+    }
+}
+
+.button_card.active{
+    background-color: $black_color;
+}

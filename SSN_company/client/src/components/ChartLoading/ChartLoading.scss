@@ -1,0 +1,40 @@
+@import "../../styles/global";
+
+.chart-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 600px; // Высота компонента
+
+    .chart-animation {
+        width: 120px; // Увеличиваем ширину
+        height: 120px; // Увеличиваем высоту
+    }
+
+    .chart-path {
+        fill: none;
+        stroke: $rose_color; // Цвет линии графика
+        stroke-width: 4; // Увеличиваем ширину линии
+        stroke-dasharray: 150; // Увеличиваем длину линии
+        stroke-dashoffset: 150; // Начальное смещение
+        animation: draw 2s ease-in-out infinite; // Анимация
+    }
+
+    p {
+        padding-top: 15px;
+    }
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 150; // Начальное смещение
+    }
+    50% {
+        stroke-dashoffset: 0; // Полное построение
+    }
+    100% {
+        stroke-dashoffset: 150; // Возврат к началу
+    }
+}

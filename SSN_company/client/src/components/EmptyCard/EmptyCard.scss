@@ -1,0 +1,52 @@
+@import "../../styles/global";
+
+
+.empty_card {
+    @extend .container_center;
+
+    width: 300px;
+    height: 375px;
+    border-radius: 10px 10px 20px 20px;
+    background-color: rgba($white_bc_30, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 10px 10px 20px 20px;
+        border: 3px solid $white_item_color;
+        pointer-events: none; // Игнорируем события мыши
+        z-index: 1;
+    }
+
+    .empty_task_plus {
+        @extend .container_center;
+
+        width: 50px;
+        height: 45px;
+        background-color: $white_bc_30;
+        border-radius: 0 10px 0 20px;
+        border: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .empty_task_button {
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        background-color: transparent;
+
+        p {
+            color: $white_item_color;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+@import "../../styles/global";
+
+.section_shaping{
+    margin: 25px 30px 30px 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.5s ease; /* Плавная анимация изменения высоты */
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 1px solid $white_item_color;
+        pointer-events: none; // Игнорируем события мыши
+        z-index: 1;
+    }
+
+    .section_text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: relative;
+
+        >p:nth-of-type(2){
+            color: $gray_text_90;
+        }
+
+        .section_tool{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 63px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            gap:10px;
+
+            >img{
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+
+    >.container{
+        height: fit-content;
+        padding: 40px 40px 27px 40px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        width: 100%;
+        
+        .container_test{
+            min-width: 1000px;
+            background-color: #fff;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        &.collapsed {
+            max-height: 0; 
+            padding: 0 10px;
+        }
+    }
+
+    
+}
+
+@media(max-width: 1025px){
+    .section_shaping{
+        margin: 25px 0px 30px 0px;
+        padding: 0 10px;
+        max-width: 683px;
+        box-sizing: border-box;
+        width: 100%;
+
+        &::before {
+            margin: 0 10px;
+        }
+    }
+}
+
+.container::-webkit-scrollbar {
+    width: 3px; 
+    height: 3px; 
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: $rose_color;
+    border-radius: 10px;
+}
+
+
+// @media (max-width: 659px){
+//     .header_project{
+//         .header_project_main{
+//             align-items: center;
+//             gap: 45px 90px;
+
+//             .header_project_filter{
+//                 padding-top: 65px;
+//                 display: flex;
+//                 flex-direction: column;
+//                 align-items: center;
+        
+//                 > p:nth-of-type(1){
+//                     padding-top: 20px;
+//                     padding-left: 0;
+//                 }
+        
+//                 > p:nth-of-type(2){
+//                     font-size: 46px;
+//                     padding: 0px 0 15px 0;
+//                 }
+//             }
+//         }
+//     }
+// }

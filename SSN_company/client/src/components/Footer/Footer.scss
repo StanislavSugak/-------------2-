@@ -1,0 +1,209 @@
+@import "../../styles/global";
+
+.field_base {
+    @extend .container_center;
+    flex-direction: column;
+    width: fit-content;
+    height: 68px;
+    gap: 10px;
+    
+
+    p:nth-of-type(1) {
+        width: 100%;
+        text-align: start;
+        color: $rose_color;
+    }
+}
+
+footer {
+    @extend .container_center;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    background-color: $first_color;
+    position: relative;
+
+    &::before { //псевдоэлемент для внутренней границы
+        content: ''; 
+        position: absolute; // Позиционирование относительно родителя
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 0.5px solid $border_color; 
+        pointer-events: none; // Игнорируем события мыши
+        z-index: 1; 
+    }
+
+    .footer_up {
+        height: 330px;
+        width: 100%;
+        padding: 0 70px;
+        box-sizing: border-box;
+
+        .present {
+            @extend .container_between;
+            height: 100px;
+            width: calc(100% - 20px);
+            margin: 0 10px;
+
+            .present_text {
+                @extend .container_center;
+                justify-content: start;
+                gap: 55px;
+            }
+
+            .button_language {
+                width: 180px;
+                height: 40px;
+                background-color: transparent;
+                border: 1px solid $white_item_color;
+                border-radius: 10px;
+                padding: 6px 0 8px 52px;
+                cursor: pointer;
+            }
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: $white_item_color;
+        }
+
+        .info {
+            @extend .container_center;
+            flex-direction: column;
+            gap: 11px;
+
+            .info_icon {
+                @extend .container_between;
+                align-items: start;
+                height: fit-content;
+                width: calc(100% - 20px);
+                margin: 25px 10px 0 10px;
+
+                .field {
+                    @extend .field_base;
+                }
+
+                .icon {
+                    @extend .container_between;
+                    height: 24px;
+                    width: 220px;
+                    margin-top: 17px;
+
+                    img {
+                        height: 24px;
+                        width: 24px;
+                    }
+                }
+            }
+
+            .info_who {
+                @extend .container_between;
+                align-items: start;
+                height: fit-content;
+                width: calc(100% - 20px);
+                margin: 0 10px;
+
+                .field {
+                    @extend .field_base;
+                    margin-top: 24px;
+                }
+
+                .who {
+                    @extend .container_center;
+                    width: 269px;
+                    height: 42px;
+                    background-color: transparent;
+                    border: 1px solid $white_item_color;
+                    border-radius: 10px;
+                    gap: 10px;
+                }
+            }
+        }
+    }
+
+    .footer_down {
+        @extend .container_center;
+        height: 60px;
+        width: 100%;
+        background-color: $second_color;
+
+        .mode {
+            @extend .container_center;
+            gap: 5px;
+            letter-spacing: -0.7px;
+        }
+    }
+}
+
+@media (max-width: 762px) {
+    footer {
+        .footer_up {
+            height: 610px;
+            padding: 0;
+
+            .present {
+                height: 212px;
+                flex-direction: column;
+                justify-content: start;
+                gap:35px;
+                margin-top: 30px;
+
+                .present_text {
+                    flex-direction: column;
+                    order: 2;
+                    gap:35px;
+                }
+            }
+
+            .line {
+                width: calc(100% - 20px);
+                margin: 0 10px;
+            }
+
+            .info {
+                gap:35px;
+
+                .info_icon {
+                    flex-direction: column;
+                    margin-top: 30px;
+                    gap: 35px;
+                    align-items: center;
+
+                    .field {
+                        order: 2;
+                        p:nth-of-type(1) {
+                            text-align: center;
+                        }
+                    }
+
+                    .icon{
+                        margin-top: 1px;
+                    }
+                }
+
+                .info_who {
+                    flex-direction: column;
+                    gap: 35px;
+                    align-items: center;
+
+                    .field {
+                        margin-top: 0px;
+
+                        p:nth-of-type(1) {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer_down {
+            .mode {
+                margin-top: 5px;
+            }
+        }
+    }
+}

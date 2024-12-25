@@ -1,0 +1,108 @@
+@import "../../styles/global";
+
+.header_employee {
+    margin: 50px 30px 0 75px;
+
+    > p {
+        margin-bottom: 15px;
+    }
+
+    .container_setting {
+        @extend .container_between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        .container_filter {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            gap: 15px;
+            margin-top: 35px;
+            order: 1;
+
+            .container_filter_button {
+                display: flex;
+                height: fit-content;
+                width: 100%;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+        }
+
+        .container_report {
+            @extend .container_center;
+            gap: 10px;
+            width: fit-content;
+            margin-right: 30px;
+            order: 2;
+            margin-top: 80px;
+        }
+
+        .container_sort{
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            width: 100%;
+            gap: 15px; 
+            order: 3;
+
+            .container_sort_button{
+                display: flex;
+                flex-wrap: wrap;
+                height: fit-content;
+                width: fit-content;
+                gap: 18px;
+            }
+        }
+    }
+}
+
+.employee_card_section{
+    @extend .container_center;
+    flex-direction: column;
+    height: fit-content;
+    margin: 0px 30px 0 75px;
+
+
+    .cards{
+        @extend .container_center;
+        height: fit-content;
+        width: fit-content;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .paggination{
+        width: 200px;
+        height: 10px;
+        background-color: #fff;
+        margin: 45px 0;
+    }
+}
+
+@media (max-width: 1113px) {
+    .header_employee {
+        .container_setting {
+            .container_filter {
+                order: 2;
+                margin-top: 5px;
+            }
+    
+            .container_report {
+                order: 1;
+                margin-top: 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .header_employee {
+        margin: 75px 0 0 0;
+        padding: 0 10px;
+        box-sizing: border-box;
+        max-width: 638px;
+        width: 100%;
+    }
+}

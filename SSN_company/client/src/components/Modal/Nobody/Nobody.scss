@@ -1,0 +1,8 @@
+@import "../../../styles/global";
+
+.nobody{
+   @extend .text_mln_f16_l16;
+
+   margin-left: 10px;;
+   color: $rose_color;
+}

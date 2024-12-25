@@ -1,0 +1,42 @@
+@import "../../../styles/global";
+
+.block_stack{
+    height: 140px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 5;
+    position: relative;
+
+    >div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    >div:nth-of-type(1){
+        >p{
+            color: $black_item_color;
+        }
+    }
+
+    >div:nth-of-type(1), :nth-of-type(2){
+        height: 36px;
+        width: 100%;
+    }
+    >div:nth-of-type(3){
+        height: 18px;
+        width: 100%;
+    }
+    
+    .td{
+        position: absolute;
+        top: 109px;
+        left: -16px;
+        width: 110px;
+        height: 42px;
+        border: 1px solid $white_item_color;
+    }
+}

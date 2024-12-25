@@ -1,0 +1,13 @@
+@import "../../../styles/global";
+
+.block_text{
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    >p:nth-of-type(2){
+        color: $gray_text_999;
+    }
+}

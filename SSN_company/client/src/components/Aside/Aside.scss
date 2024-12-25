@@ -1,0 +1,106 @@
+@import "../../styles/global";
+
+aside{
+    @extend .container_between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: auto;
+    min-height: 600px;
+    max-width: 280px;
+    width: 100%;
+    background-color: $first_color;
+    position: relative;
+    padding: 45px 0 50px 50px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Плавный переход для анимации */
+    z-index: 800; /* Чтобы быть выше других элементов */
+
+    &::before { //псевдоэлемент для внутренней границы
+        content: ''; 
+        position: absolute; // Позиционирование относительно родителя
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-left: 0.5px solid $border_color; 
+        pointer-events: none; // Игнорируем события мыши
+        z-index: 1; 
+    }
+
+    &.closed {
+        transform: translateX(101%); 
+    }
+    
+    &.open {
+        transform: translateX(0); 
+    }
+
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li{
+            height: 32px;
+            display: flex;
+            gap: 20px;
+
+            img{
+                height: 20px;
+                width: 20px;
+                margin: 8px 0 4px 0;
+            }
+
+            a {
+                @extend .text_mln_f22_l22;
+                text-decoration: none; 
+                margin: 4px 0 6px 0;
+    
+            }
+        }  
+        .aside_null{
+            height: 1px;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .aside_back{
+            display: flex;
+            gap: 20px;
+
+            button{
+                outline: none;
+                background-color: transparent;
+                border: 0;
+                padding: 0;
+                margin: 0;
+                cursor: pointer;
+    
+                >p{
+                    @extend .text_mln_f22_l22;
+    
+                    color: $rose_color;
+                    margin: 4px 0 6px 0;
+                }
+            }
+        } 
+    }
+
+    ul:nth-of-type(2) li:last-child a {
+        color: $rose_color;
+    }
+}
+
+@media (max-width: 1025px) {
+    aside{
+        position: absolute;
+        min-height: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+        
+    }
+}

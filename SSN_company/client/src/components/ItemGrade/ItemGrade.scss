@@ -1,0 +1,54 @@
+@import "../../styles/global";
+
+.l_grade{
+    height: 39px;
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .isMentor{
+        @extend .text_mln_f20_l20;
+
+        position: absolute;
+        color: $rose_color;
+        font-size: 13px;
+        top: -24px;
+        left: 161px;
+    }
+
+    >div{
+        display: flex;
+        flex-direction: column;
+        gap:3px;
+        justify-content: flex-start;
+        margin-top: 4px;
+
+        .l_level{
+            width: 200px;
+            height: 12px;
+            border-radius: 10px;
+            position: relative;
+            background-color: transparent;
+            display: flex;
+
+
+            >span{
+                border-radius: 10px 0 0 10px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 10px;
+                border: 1px solid $white_item_color;
+                pointer-events: none;
+                z-index: 1;
+            }
+        }
+    }
+}

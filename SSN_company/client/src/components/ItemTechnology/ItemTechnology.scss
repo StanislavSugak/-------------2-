@@ -1,0 +1,19 @@
+@import "../../styles/global";
+
+.t_icon{
+    display: flex;
+    height: 20px;
+    gap: 15px;
+    align-items: center;
+
+    >span{
+        height: 8px;
+        width: 8px;
+        border-radius: 8px;
+        background-color: $white_item_color;
+    }
+
+    >p:nth-of-type(2){
+        margin-left: auto;
+    }
+}

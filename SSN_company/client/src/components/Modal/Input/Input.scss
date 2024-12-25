@@ -1,0 +1,39 @@
+
+@import "../../../styles/global";
+
+.input{
+    height: 40px;
+    background-color: transparent;
+    padding: 0 20px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 1px solid $white_item_color;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    input{
+        @extend .text_mln_f16_l16;
+        border: 0;
+        outline: none;
+        background-color: transparent;
+        
+        color: $gray_text_9E;
+    }
+
+    input::placeholder{
+        @extend .text_mln_f16_l16;
+
+        color: $gray_text_9E;
+    }
+}

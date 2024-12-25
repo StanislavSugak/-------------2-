@@ -1,0 +1,94 @@
+@import "../../styles/global";
+
+
+.shaping_start{
+    @extend .container_between;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 30px 50px 75px;
+    gap: 10px;
+
+    .ss_bus{
+        @extend .container_center;
+        gap: 5px;
+        width: 320px;
+
+        >p{
+            margin: 0 auto;
+        }
+
+        button{
+            @extend .container_center;
+            width: 164px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: $white_item_color;
+            outline: none;
+            border: 0;
+
+            >p{
+                color: $black_item_color
+            }
+        }
+        
+        span{
+            @extend .container_center;
+            height: 40px;
+            width: 40px;
+
+            >img{
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+
+    .ss_start{
+        @extend .container_center;
+        gap: 5px;
+
+        button{
+            @extend .container_center;
+            width: 164px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: $white_item_color;
+            outline: none;
+            border: 0;
+
+            >p{
+                color: $black_item_color
+            }
+        }
+        
+        span{
+            @extend .container_center;
+            height: 40px;
+            width: 40px;
+
+            >img{
+                height: 25px;
+                width: 25px;
+            }
+        }
+    }
+}
+
+@media(max-width: 1025px){
+    .shaping_start{
+        margin: 0 0 50px 0;
+        max-width: 683px;
+        padding: 0 10px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 538px){
+    .shaping_start{
+        justify-content: flex-start;
+        .ss_start{
+            margin-left: 111px;
+        }
+    }
+   
+}

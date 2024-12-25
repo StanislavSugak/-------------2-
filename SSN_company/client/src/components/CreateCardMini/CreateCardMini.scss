@@ -1,0 +1,39 @@
+@import "../../styles/global";
+
+
+.card_mini {
+    @extend .container_center;
+
+    width: 240px;
+    height: 40px;
+    border-radius: 10px 10px 20px 20px;
+    background-color: $white_bc_5;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 10px 10px 20px 20px;
+        border: 3px solid $rose_color;
+        pointer-events: none; // Игнорируем события мыши
+        z-index: 1;
+    }
+
+    .create_task_button {
+        border: 0;
+        cursor: pointer;
+        padding: 0;
+        background-color: transparent;
+
+        p {
+            color: $rose_color;
+        }
+    }
+}

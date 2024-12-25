@@ -1,0 +1,63 @@
+@import "../../styles/global";
+
+.t_technology{
+    width: 300px;
+    height: 255px;
+    border-radius: 20px;
+    background-color: $color_81;
+
+    >div:nth-of-type(1){
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 20px 20px 23px 20px 
+    }
+    
+    >div:nth-of-type(2){
+        width: 230px;
+        margin: 0 35px;
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+
+        >p:first-child{
+            color: $rose_color;
+        }
+    }
+
+    .pagination {
+        display: flex; 
+        justify-content: center; 
+        gap: 10px;
+        margin-top: 30px;
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: transparent; 
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative;
+        
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border-radius: 50%;
+                border: 1px solid $white_item_color;
+                pointer-events: none;
+                z-index: 1;
+            }
+        }
+        
+        .dot.active {
+            background-color: $white_item_color; 
+        }
+    }
+    
+    
+}

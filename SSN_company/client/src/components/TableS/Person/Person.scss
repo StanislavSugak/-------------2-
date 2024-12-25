@@ -1,0 +1,42 @@
+@import "../../../styles/global";
+
+.person{
+    height: 33px;
+    display: flex;
+    position: relative;
+    border: 1px solid $white_item_color;
+    border-top: 0;
+    
+    .p_name{
+        @extend .container_center;
+        width: 203px;
+        border-right: 1px solid $white_item_color;
+    }
+
+    .p_grade{
+        display: flex;
+        flex-grow: 1;
+
+        >div{
+            @extend .container_center;
+            width: 110px;
+            border-right: 1px solid $white_item_color;
+            color: $white_item_color;
+            position: relative;
+
+            >p{
+                color: $black_item_color;
+            }
+
+            >p:nth-of-type(2){
+                position: absolute;
+                top: 3px;
+                right: 4px;
+            }
+        }
+
+        >div:last-child{
+            border-right: 0;
+        }
+    }
+}

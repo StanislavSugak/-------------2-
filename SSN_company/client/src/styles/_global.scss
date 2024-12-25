@@ -1,0 +1,33 @@
+@import './_variables';
+@import './_text';
+
+.container_between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main{
+    position: relative;
+    overflow-x: hidden;
+}
+
+.fade_in {
+    animation: fadeIn 0.5s ease forwards; /* Плавное появление */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
