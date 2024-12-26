@@ -4,8 +4,8 @@
 
 > Вы можете связаться с автором напрямую, чтобы получить дополнительные сведения о процессе разработки
 
-### [Связь с автором](https://t.me/Stasi4ekKk)
 
+### [Связь с автором](https://t.me/Stasi4ekKk)
+#### [Сылка на старую версию комитов](https://github.com/StanislavSugak/Company_SSN/commits/development/)
 -----------------
 __Backup базы данных IT_company.sql__
-
